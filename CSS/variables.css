@@ -1,0 +1,13 @@
+/* Declaracion de variables en CSS */
+
+/* Este selector hace referencia al documento html */
+:root {
+  --gray-dark: #222222;
+  --gray-light: #858585;
+  --blue-light: #1e65ff;
+}
+
+.principal {
+  background-color: var(--gray-dark);
+  color: var(--blue-light);
+}

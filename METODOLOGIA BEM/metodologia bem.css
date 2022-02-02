@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.contenedor {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.carta {
+    background: rgb(240, 240, 240);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.carta___img {
+    width: 100%;
+
+}
+
+.carta__titulo {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.carta__enlace {
+    color: black;
+}
+
+.carta__parrafo {
+    line-height: 20px;
+    color: cadetblue;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 0px 10px;
+}
+
+.boton {
+    border: none;
+    min-width: 180px;
+    height: 50px;
+    padding: 0 30px;
+    background: black;
+    color: white;
+    display: inline-block;
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s ease all;
+}
+
+.boton:hover {
+    text-decoration: none;
+}
+
+.carta__link {
+    width: 650px;
+    height: 200px;
+    background-color: black;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+}

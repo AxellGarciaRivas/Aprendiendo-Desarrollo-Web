@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Cursiva";
+  src: url(../assets/Cursiva.ttf) /* format("ttf") */;
+  /*
+    El formato es opcional en este caso no me funciono 
+    si tuvieras que agregar otra fuente lo agregas igual y solo lo separas
+    por un coma y en la siguiente linea
+  */
+}
+
+h1 {
+  font-family: "Cursiva", sans-serif;
+  font-display: swap;
+  /* 
+    Existen diferentes estilos de cuando aun no se a cargado la fuente que asignamos
+    auto      utilizara el metodo predeterminado del navegador
+    block     ocualta la fuente hata que descargue la fuente asignada
+    swap      mortrara fuente alternativa mientras se descarga la asignada
+    fallback  mezcla de auto y swap
+    opcional  ocultara el texto y luego cargara fuente alternativa y final cargara la asignada
+  */
+}
+
+p {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+}

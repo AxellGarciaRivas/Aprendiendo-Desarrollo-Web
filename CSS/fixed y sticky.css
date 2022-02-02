@@ -1,0 +1,40 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,          /* Todos los elementos */
+*:before,   /* Todos los elementos before */
+*:after {
+  /* Todos los elementos after */
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+header{
+  position: relative;
+  height: 150px;
+}
+
+.titulo-principal {
+  font-size: 50px;
+  background-color: grey;
+  text-align: center;
+  font-family: sans-serif;
+  height: 150px;
+  width: 100%;
+  padding-top: 50px;
+  position: fixed;
+  z-index: 1;
+}
+
+.titulos {
+  background-color: greenyellow;
+  position: sticky;
+  top: 150px;
+}

@@ -1,0 +1,267 @@
+<html lang="es">
+<!-- 
+    Se le puede agregar el dominio del pais 
+    Ejemplo <html lang="es-CR">
+    Se recomienda solamente cuando es algo muy del pais 
+  -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Aprendiendo la estructura de HTML correctamente">
+  <!-- La descripcion no mas de 165 caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML</title>
+  <!--El titulo debe ser entre 55 y 65 caracteres -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="http://tudominio.com/la-url-canonica"> <!-- Es importante por el SEO -->
+  <link rel="icon" href="ruta del icono.png""> <!-- Es importante por el SEO  agrega imagen en escritorio-->
+  <link rel=" apple-touch-icon" href="favicon.png">
+  <!-- Es importante por el SEO agrega imagen en tactiles en los moviles-->
+  <meta name="theme-color" content="#ff6600"> <!-- Cambia el color del navegador en los dispositivos moviles -->
+  <!-- Las siguientes metas etiquetas son para las tarjetas de presentacion en redes sociales -->
+  <meta property="og:title" content="HTML">
+  <meta property="og:descripcion" content="Aprendiendo la estructura de HTML correctamente">
+  <meta property="og:image" content="direccion de la imagen">
+  <!-- la direccion de la imagen tiene que ser relativa al dominio -->
+  <meta property="og:url" content="direccion canonica de la pagina web">
+  <!-- Estos metas son para que funcionen en twitter revisar la documentacion del sitio -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:side" content="cuenta en twutter">
+</head>
+
+<body>
+  <p>
+    <b>egrita</b>
+    <i>Italica</i>
+    <u>Subrayado</u>
+    <sup>Potencia</sup>
+    <sub>Formula del agua</sub>
+    <small>Letras pequeñas</small>
+    <code>Formato de codigo</code>
+
+    <!-- etiquetas semanticas -->
+    <strong>Importante</strong>
+    <em>Enfasis</em>
+  <blockquote>Referencia de algo, citar un texto</blockquote>
+  <cite>Socrates</cite>
+  <hr> <!-- Una linea es un salto de contenido, un salto de semantico-->
+  </p>
+  <p>
+    <!-- Etiquetas de formateo -->
+  <pre>
+      <!-- etiquetas de preformatear b -->
+    </pre>
+  </p>
+
+
+  <header>Es la cabezera de la pagina</header>
+
+  <main>
+    Seccion principal de la pagina
+  </main>
+
+  <footer>pie de pagina</footer>
+
+  <nav>Botonera navegacion</nav>
+  <section></section>
+
+  <article>articulo de una seccion</article>
+
+  <aside>articulo secundario</aside>
+
+  <address>Direccion de contacto</address>
+
+  <figure>
+    <img src="" alt=""> <!-- Se introduce la imagen y el texto de abajo aparecera con la etiqueta de abajo -->
+    <figcaption>Texto que esta debajo de la pagina</figcaption> <!-- Esta etiqueta es opcional -->
+  </figure>
+
+  <ol start="10">
+    <!-- Atributo que permite elegir el numero con el que vas a iniciar -->
+    <li>uno</li>
+    <li>dos</li>
+    <li>tres</li>
+    <li>cuatro</li>
+    <li>cinco</li>
+    </li>
+  </ol>
+
+  <ol reversed>
+    <!-- Atributo para iniciar en reversa -->
+    <!-- type estan los siguientes a, A, I, i -->
+    <li>uno</li>
+    <li>dos</li>
+    <li>tres</li>
+  </ol>
+
+  <!-- Lista de definiciones -->
+  <dl>
+    <dt>HTML</dt> <!-- El titulo de la hoja de definicion -->
+    <dd>Lenguaje de hipertexto</dd> <!-- Definicion del titulo -->
+  </dl>
+
+  <!-- Tablas en HTML -->
+  <table>
+    <thead>
+      <!-- Esta etiqueta le da importancia a lo que este dentro -->
+      <th colspan="3">Titulo de la tabla</th>
+      <!-- El atributo colspan y rowspan es le dice cuando espacios tiene que ocupar el titulo a lo que se lo asigne -->
+      <tr>
+        <td>Cantidad</td>
+        <td>Producto</td>
+        <td>Precio</td>
+      </tr>
+    </thead>
+    <!-- Cuerpo de la tabla -->
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="3">Este es el pie de pagina</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- Enlaces -->
+  <a href="#" target="_blank" rel="nofollow">ancla hiper referencia</a>
+  <!-- el rel=nofollow es como para no seguirlo en los enlaces pero que solo es como una sugerencia -->
+
+  <a href="mailto:axe4ll97@gmail.com">Enviar un correo</a> <!-- Para enviar un correo haciendo solo un click -->
+  <a href="tel:50661161986"> LLamar haciendo click</a> <!-- Para realizar una llamada con solo un click -->
+  <a href="https://api.whatsapp.com/send?phone=50661161986&text=Hola" target="_blank">Enviar whatsapp</a>
+  <!-- Se puede realizar de cualquier tipo de enlace como las api solo es de investigar -->
+
+    <!-- Interactividad desplegable con html -->
+  <details open>
+    <!-- 
+      El datails es la etiqueta de un menu desplegable,
+      el atributo open hace que cuando la pagina se cargue siemple el contenido desplegable este abierto 
+    -->
+    <summary>Titulo de la ventana desplegable en HTML</summary> <!-- el titulo del menu desplegable -->
+    <article>uno</article>
+    <article>dos</article>
+    <article>tres</article>
+    <article>cuatro</article>
+  </details>
+
+  <!-- Ventana Modal -->
+  <dialog open>
+    Esta es una ventana como la de alerte pero directamente con solo HTML esta es una etiqueta experimental
+  </dialog>
+
+  <button>Este es un boton</button>
+
+  <br><br><br><br>
+
+  <audio src="" controls></audio>
+  <!--
+     autoplay para que se reprodusca en el momento que se carga la pagina 
+     muted para que empieze sin sonido
+     preload atributo que hace que en el cache del navegador se vaya almacenando el la informacion como en youtube
+    -->
+
+  <video src="" controls autoplay preload muted poster=""></video>
+  <!-- El atributo poster es la imagen que se vera antes del video youtube -->
+
+  <iframe src="" frameborder="0"></iframe>
+  <!-- Sirve para cargar una pagina dentro de otra pagina 
+      En el mapa se busca el lugar compartir e incorporara mapa
+      En youtube seria insertar
+      Se puede inscruptar hasta documentos pdf
+  -->
+
+  <br><br><br>
+  <!-- Formularios -->
+  <form action="">
+    <!-- 
+      Los pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" esto es lo que necesita para lo de los patrones para nombre de usuario
+      Los pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" esto es para que meta un correo valido 
+    -->
+    <input type="text">
+    <label>
+      <input type="checkbox" required>
+      Acpetas terminos y condiciones?
+    </label>
+    <!-- Con las label para no agregarles el atributo for metemos el input dentro de la etiqueta label
+      Solo funciona con los checkbox
+    -->
+    <input type="radio">
+    <!-- 
+      El atributo name tiene que ser igual que todos los radios para que solo seleccione uno
+      El atributo checked para que  cuando cargue la pagina salga seleccionado una de las opciones
+      El atributo requerid solo se necesita en uno de los input del radio
+     -->
+    <input type="date">
+    <input type="color">
+    <input type="button" value="boton">
+    <input type="submit">
+    <input type="reset">
+    <input type="file" multiple> <!-- Agregando el atributo multiple selecciona mas de una archivo -->
+    <input type="hidden"> <!-- Este se utilizara mas en javascript para cuando hay diferente formatos -->
+    <input type="email">
+    <input type="number" min="0" max="10"> <!-- Los atributos min y max dan los limites -->
+    <input type="tel">
+    <input type="password">
+    <textarea cols="50" rows="5" placeholder="Escribe un comentario"></textarea>
+    <select name="" id="">
+      <!-- Con el atributo multiple selecciono mas de una opcion -->
+      <option value="">HTML</option>
+      <option value="">CSS</option>
+      <option value="">Javascript</option>
+      <option value="">PHP</option>
+      <option value="">Python</option>
+    </select>
+    <!-- Algunos atributos son los siguientes
+      Cuando son atributos booleano solo se necesita declarar para activarla
+      readonly solo lectura es booleano
+      diseable desabilitado es booleano
+      requerid requerido es booleano
+      pattern patron 
+
+    -->
+    <br><br><br><br>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" pattern="^[A-Za-z]+$"
+      title="El campo solo acepta letras">
+    <!--
+      El id del input se vincula con el for del label
+      el name es el valor que se envia al servidor
+     -->
+  </form>
+
+  <!-- Atributos data -->
+  <ul>
+    <!-- Los atributos data puedes ponerles cualquier nombre -->
+    <li data-id="1" data-name="uno">1</li>
+    <li data-id="2" data-name="dos">2</li>
+    <li data-id="3" data-name="tres">3</li>
+  </ul>
+
+  <!-- Accesivilidad web -->
+  <!-- 
+    Para lectores no vidente lo de role
+    Para lo del foco seria tabindex los numeros pueden ser positivos y negativos
+  -->
+  <ul role="list">
+    <li tabindex="1" role="listitem">Verano</li>
+    <li tabindex="2" role="listitem">Otoño</li>
+    <li tabindex="3" role="listitem">Invierno</li>
+    <li tabindex="4" role="listitem">Primavera</li>
+  </ul>
+  <!-- Para mas informacion cuando lo lee la compu para personas no vidente -->
+  <a role="link" aria-label="Para mas informacion sobre las estaciones del año" href="#">Para mas informacion</a>
+</body>
+
+</html>
