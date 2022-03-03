@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manejos de errores en JS</title>
+</head>
+<body>
+  <h1>Fundamentos de JavaScript</h1>
+  <script>
+    //try catch finally para poner trozos de codigo a evaluar si tiene errores o no
+    try {
+      console.log("En el try se pone el fragmento a evaluar")
+      noExiste
+      console.log("Sigue el mensaje de try")
+
+    } catch (error) {
+      console.log("En el catch se captura cualquier error surgido  o lanzado en el try")
+      console.log(error)
+
+    } finally { //finally casi no se usa esta tercera opcion
+      console.log("En finally se ejecuatara siempre al final de un bloque try-catch")
+    }
+
+    try {
+      let numero = "y"
+
+      if (isNaN(numero)) { //este metodo ejecuta si es un numero te devolvera true o false 
+        throw new Error("El cararcter introducido no es un numero")
+      }
+
+      console.log(numero * numero)
+    } catch (error) {
+      console.log(`Se produjo el siguiente error: ${error}`)
+    }
+
+  </script>
+</body>
+</html>
