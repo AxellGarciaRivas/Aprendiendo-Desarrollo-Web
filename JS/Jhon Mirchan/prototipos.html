@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos de JavaScript</title>
+</head>
+
+<body>
+  <h1>Prototipos en JS</h1>
+  <script>
+    //POO significa programacion orientada a objetos
+    /* clases         es un modelo a seguir
+       objetos        Es una instancia de una clase
+        atributos     una caracteristicas o una propiedad del objeto (variables dentro de un objeto)
+        metodos       son las acciones que un objeto puede realizar (son funciones de un objeto)*/
+
+
+    //los objetos literales no mostrara nada adelante ya que no son nada 
+    const animal = {
+      nombre: "Snoopy",
+      sonar () {
+        console.log("Hago sonido por que estoy vivo")
+      }
+    }
+
+    const animal2 = {
+      nombre: "Lola",
+      sonar () {
+        console.log("Hago sonido por que estoy vivo")
+      }
+    }
+
+    console.log(animal)
+    console.log(animal2)
+
+
+
+
+
+    
+    //funcion constructura es como la siguiente con lo de los this
+    //en estas funciones mostrara que son (por ejemplo las de abajo que son animales) mas su propiedades 
+    function Animal (nombre, genero) {
+      //atributos
+      this.nombre = nombre        //en JS los atributos y metodos tienen que ir colgados del this
+      this.genero = genero
+
+      // por recomendacion es mejor sacar los metodos y solo dejar los atributos de una funcion constructura ya
+      //que si tenemos muchos animales diferentes los metodos se repetiran en todos los animales
+      //metodos
+      this.sonar = function () {    //en funciones constructuras tiene que escribirse de esta forma no de la corta
+        console.log("Hago ruido por que estoy vivo")
+      }
+    }
+
+    const snoopy = new Animal("Snoopy", "Macho"),
+          lola = new Animal("Lola", "Hembra")
+
+    console.log(snoopy)
+    console.log(lola)
+
+    snoopy.sonar()
+    lola.sonar()
+
+
+    //ejemplo de funcion correjida donde asignaremos los metodos al prototipo no a la funcion como tal
+    //esto evitara el duplicado en las instancia(en lo metodos creados) esto hace mejora de rendimiento
+
+    function persona (nombre, edad) {
+      this.nombre = nombre
+      this.edad = edad
+    }
+
+
+    //metodos agregados al prototipo de la funcion constructura o sea se le agrego por fuera
+    persona.prototype.saludar = function () {
+      console.log(`Hola, mi nombre es ${this.nombre}`)
+    }
+
+    const axell = new persona ("Axell", 23),
+          lidieth = new persona ("Lidieth", 22)
+
+    console.log(axell)
+    console.log(lidieth)
+
+    axell.saludar()
+    lidieth.saludar()
+
+  </script>
+</body>
+
+</html>

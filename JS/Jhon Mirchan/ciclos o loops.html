@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops en JS</title>
+</head>
+
+<body>
+  <h1>Fundamentos de JavaScript</h1>
+  <script>
+    let contador = 0
+
+
+    //estos dos ciclos cas no se usan en JS
+    //iteracion es cada vuelta
+
+    //while = mientras 
+    while (contador <= 10) {
+      console.log(contador)
+
+      contador++
+    }
+
+
+
+
+
+
+
+
+    //do while hazlo mientras
+    do {
+      console.log("Do-while " + contador)
+
+
+      contador++
+    } while (contador <= 10);
+
+
+
+
+
+
+
+
+    //for(inicializacion de la variable; condicion; decremento o incremento) {Setencia que ejecuta el for}
+    for (let i = 0; i <= 10; i++) {
+      console.log("for " + i)
+
+    }
+
+
+
+
+
+
+
+
+
+    let numero = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+    for (let i = 0; i < numero.length; i++) { //si la i tuviera un numero estatico imprimiria hasta ese numero pero al hacer a toda la longitud del array lo imprimira todo
+      console.log(numero[i])
+    }
+
+
+
+
+
+
+    
+    // for in y for of son para recorrer cualquier objeto iterable
+    //iterable cualquier cosa que se pueda dividir en partes mas pequeñas
+    let Axell = {
+      nombre: "Axell",
+      apellido: "Garcia Rivas",
+      edad: 23
+    }
+
+    //for in es una variante del for solo que es para objetos
+    for (const propiedad in Axell) { // propiedad es el nombre que damos como una variable dentro del for
+      console.log(propiedad) // para imprimir las propiedades no valores
+
+      console.log(`key:${propiedad}, value:${Axell.propiedad}`) //entre comilla inversa si no mostrara error
+
+      console.log(`key: ${propiedad}, value: ${Axell[propiedad]}`) //para que este for tedriamos que meter entre corchete para acceder la propiedad
+    }
+
+
+
+
+
+    //for of se puede usar para array y objeto o cadena de texto
+    for (const elementos of numero) { //elemento es el nombre que damos como una variabel dentro del for
+      console.log(elementos)
+    }
+
+
+    let cadena = "Hola mundo"
+    for (const letras of cadena) {
+      console.log(letras)
+    }
+
+  </script>
+</body>
+
+</html>

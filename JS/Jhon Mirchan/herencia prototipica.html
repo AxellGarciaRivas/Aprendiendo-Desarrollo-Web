@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos de JS</title>
+</head>
+
+<body>
+  <h1>Herencia prototipica</h1>
+  <script>
+    //funcion padre
+    function Animal(nombre, genero) {
+      //atributos
+      this.nombre = nombre
+      this.genero = genero
+    }
+
+    //metodo colgado del prototipo
+    Animal.prototype.sonar = function () {
+      console.log(`Hago ruido por que estoy vivo ${this.nombre}`)
+    }
+
+
+    //herencia prototipica
+    function Perro(nombre, genero,tamano) {
+
+      //el nombre super es solo por que en otros lenguajes se llama un metodo asi
+      //en este caso por eso lo nombraremos asi ya que podria ser comotu quieras
+      //con la siguiente expresion se entiende que su elemto padre sera Animal
+      this.super = Animal
+      this.super (nombre, genero)
+      this.super.tamano = tamano 
+    }
+
+    //esta linea de codigo estaria heredando de Animal
+    Perro.prototype = new Animal()
+
+    const snoopy = new Perro("Snoopy", "macho", "mediano")
+    Perro.prototype.constructor = Perro
+
+    //sobreescritura de metodo del prototipo del padre en hijo
+    Perro.prototype.sonar = function () {
+      console.log("Soy un perro y mi sonido es un ladrido")
+    }
+
+    //crear un metodo propio del prototipo perro
+    Perro.prototype.ladrar = function () {
+      console.log("Gua Gua")
+    }
+
+    console.log(snoopy)
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Arrow function en JS</h1>
+  <script>
+    //funcion expresada es cuando a una variable le das una funcion anonima
+    //cuando solo hay una linea de codigo se pueden quitar las llaves 
+    const saludar = () => console.log("Hola")
+
+    saludar()
+
+
+    //si una arrow function no recibe un parametro obligatoriamente pondremos los parentesis
+    //si hay parametros solo los escribes sin parentesis
+    const saluda = nombre => console.log(`Hola ${nombre}`)
+    saluda("Axell")
+
+
+
+    //ejemplo de como se haria con arrow function
+    const sumar = function (a,b) {
+      return a + b;
+    }
+
+    console.log(sumar(8,9))
+
+    //los parentesis solo se quitan cuando solo es un parametros si hay mas de uno tienen
+    //que estar los parentesis, el return se puede omitir con la flecha de arrow function
+    const suma = (b,c) => b+c
+
+    console.log(suma(9,9))
+
+
+    //al tener varias lineas de codigo no se puede hacer una return implicita
+    const funcionDeVariasLineas = () => {
+      console.log("uno")
+      console.log("dos")
+      console.log("tres")
+    }
+
+    funcionDeVariasLineas()
+
+
+    //iterar
+    const numeros = [1, 2, 3, 4, 5]
+    
+    numeros.forEach ((number, index) => console.log(`${number} esta en la posicion ${index}`))
+
+
+
+
+    function perro () {
+      console.log(this)
+    }
+
+    perro()
+
+
+    const dog = {
+      nombre:"Lobo",
+      ladrar: () => console.log(this)     //este this hace referencia al objeto o sea dog y todos sus valores
+                                          //pero si las hacemos en arrow function se pondra de manera global como el caso anterior perro
+      // ladrar () {console.log(this)}    // ejemplo de como podriamos hacerlo
+    }
+
+    dog.ladrar()
+
+
+  </script>
+</body>
+
+</html>

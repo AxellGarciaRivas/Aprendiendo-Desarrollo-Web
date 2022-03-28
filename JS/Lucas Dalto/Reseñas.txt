@@ -1,0 +1,22 @@
+======================= Caracteristicas de JavaScript ===========================
+
+Imperativo: significa que se ejecuta linea por linea en su orden respectivos
+
+Case sensitive: UPPERCASE and lowercase
+
+Basado en prototipos: instancias / classless
+
+Tipado debil: nos permite que la variable pueda ser numero, texto etc...
+
+Lengua dinamico: La variable no se ajuste al dato, el dato se ajusta a la variable
+
+ECMASCRIPT (5.1 y 6, 7, 8 etc..)
+
+ES.NEXT es un nombre dinamico hace referencia a una proxima version mejor dicho una
+propuesta especificaciones no finalizadas
+
+backticks = `
+
+scope: es el alcance de una variable
+
+hoisting: 

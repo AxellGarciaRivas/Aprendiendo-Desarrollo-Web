@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+  <h1>Objetos literales en JS</h1>
+
+  <script>
+    let nombre = "Axell",
+        edad = 23
+
+    const persona = {
+      nombre: nombre,
+      edad: edad,
+      saludar:function () {
+        console.log("Hola, mi nombre es Axell Garcia Rivas")
+      }
+    }
+
+    console.log(persona)
+    persona.saludar()
+
+
+    //si declaras un objeto donde las variable se llamaran igual que la propiedad
+    //lo podremos hacer de la siguiente forma
+    const people = {
+      nombre,
+      edad,
+      sexo: "hombre",    //si necesitaramos agregar una propiedad solo se agregan y listo
+      saludar () {
+        console.log("Hi, my name is Axell Garcia Rivas")
+      }
+    }
+
+    console.log(people)
+    people.saludar()
+  </script>
+
+</body>
+</html>
