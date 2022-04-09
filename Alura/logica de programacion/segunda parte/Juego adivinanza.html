@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de adivinanza</title>
+</head>
+
+<body>
+    <script>
+        function imprimir(mensaje) {
+            document.write(mensaje);
+        }
+
+        let intentos = 5;
+
+        while (intentos > 0) {
+
+            let numeroPensado = Math.round(Math.random() * 10);
+            let numeroSolicitado = +prompt("Ingresa un numero entre 0 - 10. Intentos restantes " + intentos)
+
+            if (numeroPensado == numeroSolicitado) {
+
+                alert("Usted acerto!! El numero pensado era " + numeroPensado);
+                break;
+
+            } else {
+
+                alert('Te equivocaste el numero pensado era el ' + numeroPensado + "");
+
+            }
+
+            --intentos;
+        }
+    </script>
+</body>
+
+</html>

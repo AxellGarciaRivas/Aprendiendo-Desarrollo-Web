@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loteria</title>
+</head>
+
+<body>
+    <h1>Sorteo de loteria</h1>
+
+    <script>
+
+        function loteria(n) {
+            let numeroSorteado = sorteo();
+
+            if(n === numeroSorteado) {
+
+                imprimir("Felicidades has ganado");
+
+            } else if (n < numeroSorteado) {
+
+                imprimir("El numero lanzado era mayor");
+
+            } else {
+
+                imprimir("El numero era menor");
+                
+            }
+        }
+
+        function sorteo() {
+            return numeroSorteo = Math.round( Math.random() * 10 );
+
+        }
+
+        function imprimir(mensaje) {
+            document.write(mensaje)
+        }
+
+        loteria(+prompt("Ingresa un numero de 0 a 10"));
+
+    </script>
+</body>
+
+</html>

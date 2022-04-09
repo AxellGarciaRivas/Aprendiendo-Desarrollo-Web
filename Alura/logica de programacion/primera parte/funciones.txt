@@ -1,0 +1,4 @@
+math.round() es para redondear
+cuando ejecutamos una funcion con parametros y lo retornamos lo que sucede
+es que el valor returnado es lo que queda despues de ejecutar la funcion;
+lo que es hace es sustituir la funcion por el valor devuelto

@@ -1,1 +1,4 @@
 Implicito: Algo que esta incluido sin que se diga
+Funcion declarada funcion normal puede ser llamada antes de ser declarada
+Funcion expresada es cuando se declara una variable y se asigna una funcion no se puede llamar antes de declarar la funcion
+Funciones que no tienen nombre son anonimas 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice de masa corporal</title>
+</head>
+
+<body>
+    <h1>Programa para calcular IMC</h1>
+
+    <script>
+        function saltarLinea() {
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea();
+        }
+
+        let pesoAxell = 78;
+        let alturaAxell = 1.72;
+
+        imcAxell = pesoAxell / (alturaAxell * alturaAxell);
+
+        imprimir("El IMC de Axell es: " + imcAxell);
+
+        let pesoCarlos = 80;
+        let alturaCarlos = 1.65;
+
+        imcCarlos = pesoCarlos / alturaCarlos ** 2;
+
+        imprimir("El IMC de Carlos es: " + imcCarlos);
+
+
+
+        
+        //funcion automatizar solicitando los valores
+        function calcularIMC(nombre, peso, altura) {
+            if ((nombre === '' || null || undefined) || (peso === '' || null || undefined)) {
+                return alert('No se ingreso alguno de los datos, calculo cancelado!');
+            }
+
+            imc = peso / altura ** 2;
+
+            imprimir(`El IMC de ${nombre} es de: ${imc}`)
+
+            datosObesidad(imc, nombre);
+        }
+
+        function datosObesidad(imc, nombre) {
+
+            if (imc < 18.5) {
+                imprimir(`${nombre} estas por debajo de lo normal`)
+            } else if (imc >= 18.5 && imc < 25) {
+                imprimir(`${nombre} estas en el rago normal`)
+            } else if (imc >= 25) {
+                imprimir(`${nombre} estas con sobrepeso`) 
+            } else if (imc >= 25.1 && imc < 30) {
+                imprimir(`${nombre} estas en preobresidad`)
+            } else {
+                imprimir(`${nombre} estas en estado de obesidad`)
+            }
+
+        }
+
+        calcularIMC(
+            nombre = prompt('Dame un nombre'),
+            peso = +prompt(`Cual es el peso de ${nombre}?`),
+            altura = +prompt(`Cual es la altura de ${nombre}?`, "1.75"));
+
+
+        //funcion para sacar el promedio
+        function imcPromedio(imc1, imc2) {
+
+            return (imc1 + imc2) / 2 ;
+            
+        }
+        
+        imprimir('El promedio de imc de Axell y Carlos es de: ' + imcPromedio(imcAxell, imcCarlos));
+        
+    </script>
+</body>
+
+</html>

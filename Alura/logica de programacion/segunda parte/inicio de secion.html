@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incio de secion</title>
+</head>
+
+<body>
+    <h1>Inicio de secion</h1>
+
+    <script>
+
+        let usuarioregistrado = "aluraAxell";
+        let contrasenaregistrada = "Axell123";
+
+
+        function intentos() {
+            let i = 1;
+
+            while (i <= 3) {
+                let usuarioIngresado = prompt("Escribe tu usuario");
+                let contrasenaIngresada = prompt("Ingresa tu contraseña");
+
+                if (validacionSeccion(usuarioIngresado, contrasenaIngresada) === true) {
+                    i = 4;
+
+                } else {
+                    ++i
+
+                    if (i === 4) {
+                        alert('Demasiados intentos fallidos, intentalo mas tarde!')
+                    }
+                }
+            }
+        }
+
+        
+        function validacionSeccion(usuario, contrasena) {
+
+            if (usuario == usuarioregistrado && contrasena == contrasenaregistrada) {
+                alert('Inicio de secion exitoso');
+                return true;
+
+            } else {
+                alert('Usuario o contraseña incorrectos')
+                return false;
+            }
+        }
+
+        intentos()
+
+    </script>
+</body>
+
+</html>

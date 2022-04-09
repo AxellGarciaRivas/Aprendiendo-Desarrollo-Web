@@ -31,3 +31,5 @@ alert(mensaje);
 let empresa = prompt(`Que empreso creo a JavaScript?`)
 (empresa == "Netscape" || empresa == "nestcape") ?
 alert(`Correcto`) : alert(`Incorrecto`);
+
+//recordemso que el operador ternario devuelve el valor automaticamente

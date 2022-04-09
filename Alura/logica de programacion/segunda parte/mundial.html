@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial de futbol</title>
+</head>
+
+<body>
+    <h1>Programa de años de la fifa</h1>
+
+    <script>
+
+        function imprimir(mensaje) {
+            document.write(mensaje)
+        }
+
+        let year = 1930;
+
+        let maxYear = +prompt("Ingrese año maximo a calcular los mundiales?")
+
+        while (year <= maxYear) {
+
+            imprimir('Hubo mundial de la FIFA ' + year + "<br>")
+
+            year += 4;
+        }
+
+        imprimir("Fin");
+
+
+
+    </script>
+
+</body>
+
+</html>

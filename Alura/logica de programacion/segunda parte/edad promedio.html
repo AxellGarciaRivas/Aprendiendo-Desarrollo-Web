@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edad promedio</title>
+</head>
+<body>
+    <h1>Programa  que da la edad promedio de una familia</h1>
+
+    <script>
+
+        function imprimir(mensaje) {
+
+            document.write(mensaje)
+
+        }
+
+        let cantidadIntegrantes = +prompt('Ingresa el numero de integrantes.')
+
+        if ( cantidadIntegrantes != "" || null || undefined) {
+            
+            let i = 1
+
+            while (i <= cantidadIntegrantes) {
+                
+                let edadIntegrante = +prompt('Cual es la edad del integrante?')
+                totaledades = 0; 
+
+                totaledades += edadIntegrante;
+
+                ++i
+            }
+
+            promedioEdad = totaledades / cantidadIntegrantes
+
+            imprimir('La edad promedio de tu famialia es de: ' + promedioEdad);
+            imprimir('fin')
+
+        } else {
+
+            imprimir('Se cancelo el calculo')
+            
+        }
+
+    </script>
+</body>
+</html>

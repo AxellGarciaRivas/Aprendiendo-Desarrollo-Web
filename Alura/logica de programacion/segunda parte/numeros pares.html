@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros pares</title>
+</head>
+
+<body>
+    <h1>Numeros pares JavaScript</h1>
+
+    <script>
+
+        function saltoLinea() {
+
+            document.write("<br>");
+
+        }
+
+        function imprimir(mensaje) {
+
+            document.write(mensaje);
+            
+            saltoLinea();
+
+        }
+
+        let numeroLimite = +prompt('Numero hasta donde deseas obtener los pares!');
+
+        function pares(n) {
+
+            let i = 2
+
+            while(i <= n) {
+
+                imprimir(i)
+
+                i += 2
+
+            }
+
+            imprimir('fin')
+
+        }
+
+        pares(numeroLimite)
+
+    </script>
+</body>
+
+</html>

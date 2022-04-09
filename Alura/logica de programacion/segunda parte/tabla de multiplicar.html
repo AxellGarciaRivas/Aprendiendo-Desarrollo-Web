@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+</head>
+<body>
+    <h1>Programa tabla de multiplicar</h1>
+
+    <script>
+
+        function saltoLinea() {
+            document.write('<br>')
+        }
+
+        function imprimir(mensaje) {
+            document.write(mensaje);
+            saltoLinea()
+        }
+
+        let multiplicador = 1
+
+        while (multiplicador <=10) {
+
+            imprimir(5 * multiplicador);
+
+            ++multiplicador
+        }
+
+        saltoLinea()
+        saltoLinea()
+
+        let tabla = +prompt('Cual es la tabla que desea imprimir?')
+
+        if (tabla != '' || undefined || null) {
+
+            for (let i = 1; i <= 10; ++i) {
+                
+                imprimir(tabla + " x " + i + " = " + tabla * i);
+                
+            }
+            
+        } else {
+
+            imprimir("No diste el numero de la tabla a mostrar")
+
+        }
+
+    </script>
+</body>
+</html>
