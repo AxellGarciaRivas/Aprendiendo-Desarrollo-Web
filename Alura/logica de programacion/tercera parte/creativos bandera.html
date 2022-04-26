@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creativos con la bandera</title>
+</head>
+<body>
+    <h1>Creativos con la bandera de Italia</h1>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let pincel = lienzo.getContext("2d");
+
+        //bandera
+        pincel.fillStyle = "green";
+        pincel.fillRect(0, 0, 200, 400);
+
+        pincel.fillStyle = "red";
+        pincel.fillRect(400, 0 , 200, 400);
+
+        //triangulo 
+        pincel.fillStyle = "yellow";
+        pincel.beginPath()              //vamos a iniciar un camino
+        pincel.moveTo(300, 200);        //moveremos el pincel a 
+        pincel.lineTo(200, 400);
+        pincel.lineTo(400, 400);
+        // pincel.lineTo(300, 200);
+        pincel.fill();
+
+        //circulo
+        //primeros dos valores donde iniciara (x, y), luego el radio, el angulo inicial, angulo final 2 * 3.14
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(300, 200, 50, 0, 2 * 3.14);
+
+        pincel.fill();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No hay ingredientes repetidos aqui!</title>
+</head>
+
+<body>
+    <h1>Recetas de Armando</h1>
+    <script>
+
+        let ingredientes = [];
+        let cantidad = +prompt("¿Cuántos ingredientes vas a añadir?");
+
+
+
+        let contador = 1;
+        
+        while (contador <= cantidad) {
+            
+            let ingrediente = prompt("Ingresar ingrediente ");
+            let ingredienteRepetido = false;
+            let contadorVerificador = 0;
+            
+            while (contadorVerificador <= ingredientes.length) {
+                
+                if (ingrediente === ingredientes[contadorVerificador]) {
+                    ingredienteRepetido = true;
+
+                    alert("El ingrediente " + "'" + ingrediente + "'" + " esta repetido ingresa uno de nuevo")
+                    
+                    break;
+
+                }
+
+                contadorVerificador++
+                
+            }
+
+            if (ingredienteRepetido === false) {
+                ingredientes.push(ingrediente);
+                contador++;
+
+            }
+
+        }
+
+        console.log(ingredientes);
+
+    </script>
+</body>
+
+</html>

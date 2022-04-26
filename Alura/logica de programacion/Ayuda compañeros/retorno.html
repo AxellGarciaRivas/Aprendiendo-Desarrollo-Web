@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotarnar el valor de la funcion</title>
+</head>
+<body>
+    <h1>Retorna su valor</h1>
+
+    <script>
+
+
+        //variables que se meteran en la funcion "mostrarValor"
+        //la cruz delante del prompt funciona como parseInt
+        let numero1 = +prompt('Dame el primer valor!');
+        let numero2 = +prompt('Dame el segundo valor!');
+
+        //2.1 esta funcion pide dos parametros que seria los siguiente valor1 y valor2 para poder funcionar
+        //2.2 el valor de "valor1" y "valor2" son los que al llamar esta funcion se les mete entre los parentesis al ser llamada (paso 1)
+        function mostrarValor(valor1, valor2) { 
+        
+            //3.1 aqui resultado es igual a una funcion y se le estan dando los parametros de la funcion que esta ejecutando este codigo (function mostrar valor)
+            //3.2 resultado al ser igual a una funcion, resultado llama a la funcion
+            //3.3 la function "operacion" para funcionar pide dos parametros (paso 4.2)
+            resultado = operacion(valor1, valor2);
+            //6.1 resultado al ejecutar dicha function le devolvio "3" (paso 5.2)
+
+            //7.1 la function "mostrarValor" sigue leyendo su codigo
+
+            //8.1 la ultima linea de codigo es esta en la cual como resultado ya tiene un valor lo imprime
+            document.write('El resultado de la suma es: ' + resultado);
+
+        }
+
+
+        //4.1 resultado llama a esta funcion
+        //4.2 function "operacion" pide dos parametros
+        function operacion(a, b) {
+        
+            //5.1 al ejecutarse este codigo retorna la suma de los dos parametros
+            //5.2 al retornar es como sustituir "operacion(valor1, valor2)" por ej: "3" entontes reultado = 3
+            return a + b;
+
+        }
+
+        //1.esta llama la funcion y le da los valores de las variables
+        mostrarValor(numero1, numero2);
+
+
+
+
+    </script>
+</body>
+</html>

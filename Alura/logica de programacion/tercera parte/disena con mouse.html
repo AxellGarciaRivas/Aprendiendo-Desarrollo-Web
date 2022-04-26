@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseñando con el mouse</title>
+</head>
+
+<body>
+    <h1>Dibujuando con el mouse</h1>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let lienzo = document.querySelector('canvas');
+        let pincel = lienzo.getContext('2d');
+        let colores = ["red", "green", "blue"];
+        let elegido = 2;
+
+        pincel.fillStyle = 'lightgrey';
+        pincel.fillRect(0, 0, 600, 400);
+
+        function paletaColores() {
+            pincel.fillStyle = "red";
+            pincel.fillRect(0, 0, 25, 25);
+
+            pincel.fillStyle = "green";
+            pincel.fillRect(25, 0, 25, 25);
+
+            pincel.fillStyle = "blue";
+            pincel.fillRect(50, 0, 25, 25);
+        }
+
+        paletaColores()
+
+        function seleccionColor(evento) {
+            let x = evento.pageX - lienzo.offsetLeft;
+            let y = evento.pageY - lienzo.offsetTop;
+
+            if ((x >= 0) && (x <= 25) && (y >= 0) && (y <= 25)) {
+                elegido = 0;
+            } else if ((x >= 25) && (x <= 50) && (y >= 0) && (y <= 25)) {
+                elegido = 1;
+            }
+
+            if ((x >= 50) && (x <= 75) && (y >= 0) && (y <= 25)) {
+                elegido = 2;
+            }
+        }
+
+        let puedoDibujar = false;
+
+        function dibujarCirculo(evento) {
+
+            if (puedoDibujar) {
+                let x = evento.pageX - lienzo.offsetLeft;
+                let y = evento.pageY - lienzo.offsetTop;
+
+                if (!((x < 80) && (y < 30))) {
+                    pincel.fillStyle = colores[elegido];
+                    pincel.beginPath();
+                    pincel.arc(x, y, 5, 0, 2 * Math.PI);
+                    pincel.fill();
+                }
+            }
+        }
+
+        function habilitarDibujar() {
+            
+            puedoDibujar = true;
+        }
+        
+        function deshabilitarDibujar() {
+
+            puedoDibujar = false;
+        }
+
+        lienzo.onmousemove = dibujarCirculo;
+        
+        lienzo.onmousedown = habilitarDibujar;
+
+        lienzo.onmouseup = deshabilitarDibujar;
+
+        lienzo.onclick = seleccionColor;
+
+        //onmousemove captura el movimiento del mouse
+        //onmousedown cuando esta precionado
+        //onmouseup cuando es soltado
+
+    </script>
+
+
+
+
+</body>
+
+</html>

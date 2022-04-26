@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hola mundo</h1>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let cuadros = +prompt('Cuantos cuadros quieres?')
+        let direccion = prompt('A hacia que direccion? a = abajo d = derecha')
+
+        function formula(cantidad, sentido) {
+            let avanzar;
+
+            if (sentido === "d" || sentido === "D") {
+                avanzar = true
+                pintar(cantidad, avanzar);
+
+            } else {
+                avanzar = false
+                pintar(cantidad, avanzar)
+
+            }
+        }
+
+        function pintar(repeticion, avance) {
+            let lienzo = document.querySelector("canvas");
+            let pincel = lienzo.getContext("2d");
+            let x = 0;
+            let y = 0;
+
+
+            contador = 1
+            while (contador <= repeticion) {
+
+                pincel.fillStyle = "green";
+                pincel.fillRect(x, y, 50, 50)
+                pincel.strokeStyle = "black"
+                pincel.strokeRect(x, y, 50, 50)
+
+                if (avance === true) {
+                    x += 50;
+
+                } else {
+                    y += 50;
+
+                }
+
+                contador++
+
+            }
+        }
+
+        formula(cuadros, direccion)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas con JavaScript</title>
+</head>
+
+<body>
+    <h1>Dibujando en canvas con JavaScript</h1>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let pincel =  lienzo.getContext("2d")
+
+        //los primeros dos pares es para donde empieza (x, y)
+        //los segundos dos pares es donde termina (x, y)
+
+        // pincel.fillStyle = "lightgray"; //propieddad o caracteristicas
+        // pincel.fillRect(0, 0, 600, 400);//funcion
+
+        pincel.fillStyle = "green";
+        pincel.fillRect(0, 0, 200, 400);
+
+        pincel.fillStyle = "red";
+        pincel.fillRect(400, 0, 200, 400)
+
+        // pincel.fillStyle = "";
+        // pincel.fillRect(0, 0, 600, 400,)
+
+    </script>
+</body>
+
+</html>

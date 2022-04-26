@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creando objetivo</title>
+</head>
+
+<body>
+    <h1>Creando el objetivo</h1>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let pincel = lienzo.getContext("2d");
+        let xSorteo;
+        let ySorteo;
+        let radio = 10;
+
+
+        pincel.fillStyle = "lightgray"
+        pincel.fillRect(0, 0, 600, 400);
+
+        function dibujarCirculo(x, y, radio, color) {
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.fill()
+        }
+
+        function limpiarPantalla() {
+            pincel.clearRect(0, 0, 600, 400);
+            xSorteo = sortearPosicion(600);
+            ySorteo = sortearPosicion(400);
+            desinarObjetivo(xSorteo, ySorteo)
+        }
+
+        function actualizarPantalla() {
+            limpiarPantalla();
+        }
+
+        function desinarObjetivo(x, y) {
+            dibujarCirculo(x, y, radio + 20, "red")
+            dibujarCirculo(x, y, radio + 10, "white")
+            dibujarCirculo(x, y, radio, "red")
+
+        }
+
+        function sortearPosicion(maximo) {
+            return Math.round(Math.random() * maximo)
+        }
+
+        function automatizar() {
+            actualizarPantalla()
+        }
+
+
+        function acertaste(evento) {
+            let x = evento.pageX - lienzo.offsetLeft
+            let y = evento.pageY - lienzo.offsetTop
+
+            if ((x < xSorteo + radio) && (x > xSorteo - radio) && (y < ySorteo + radio) && (y > ySorteo - radio)) {
+                alert('Acertastes felicidades!!!')
+
+            }
+        }
+
+        lienzo.onclick = acertaste;
+
+        setInterval(automatizar, 900);
+    </script>
+</body>
+
+</html>

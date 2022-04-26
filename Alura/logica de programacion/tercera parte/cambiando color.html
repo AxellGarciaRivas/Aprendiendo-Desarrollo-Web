@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiando color circulo</title>
+</head>
+
+<body>
+    <h1>Ejercicio cambiando color de circulos</h1>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let lienzo = document.querySelector("canvas");
+        let pincel = lienzo.getContext("2d");
+        let colores = ["blue", "red", "green"]
+        let colorElegido = 0;
+
+        pincel.fillStyle = "gray";
+        pincel.fillRect(0, 0, 600, 400);
+
+        function dibujarCirculo(evento) {
+            let x = evento.pageX - lienzo.offsetLeft;
+            let y = evento.pageY - lienzo.offsetTop;
+
+            pincel.fillStyle = colores[colorElegido];
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+
+            console.log(x + ", " + y);
+        }
+
+        function alterarColor() {
+            alert("Funciono el cambio de color");
+
+            colorElegido++
+
+            if (colorElegido == 3) {
+                colorElegido = 0
+            }
+
+            return false ;
+        }
+
+        lienzo.onclick = dibujarCirculo;
+        lienzo.oncontextmenu = alterarColor;
+
+
+    </script>
+</body>
+
+</html>

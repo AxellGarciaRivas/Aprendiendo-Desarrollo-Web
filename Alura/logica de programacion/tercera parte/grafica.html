@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafica de estadisticas</title>
+</head>
+
+<body>
+    <h1>Barra con JavaScript</h1>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let serie2009 = [6, 47, 41, 3, 3];
+        let serie2019 = [81, 9, 3, 3, 4];
+        let colores = ["blue", "green", "yellow", "red", "gray"];
+        let lienzo = document.querySelector("canvas");
+        let pincel = lienzo.getContext("2d");
+        pincel.fillStyle = "white";
+        pincel.fillRect(0, 0, 600, 400);
+
+        function dibujarBarra(posicionX, posicionY, serie, color, texto) {
+            let y = 50
+            let x = 50
+            pincel.font = "20px Georgia";
+            pincel.fillStyle = "black"
+            pincel.fillText(texto, posicionX, posicionY - 10)
+
+            contadorSerie = 0;
+            while (contadorSerie < serie.length) {
+
+                pincel.fillStyle = color[contadorSerie];
+                pincel.fillRect(posicionX, y, x, serie[contadorSerie] * 1.5);
+
+                y += serie[contadorSerie] * 1.5;
+
+                contadorSerie++;
+            }
+
+        }
+
+        dibujarBarra(50, 50, serie2009, colores, "2009");
+        dibujarBarra(150, 50, serie2019, colores, "2019");
+
+    </script>
+</body>
+
+</html>
