@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de encriptacion</title>
+</head>
+
+<body>
+    <h1>Prueba de encriptacion</h1>
+    <label for="entrada">Ingresa un texto</label>
+    <input id="entrada" type="text">
+    <button id="btnEncriptar">Encriptar</button>
+    <script>
+        let botonEncriptar = document.querySelector("#btnEncriptar");
+        
+        botonEncriptar.addEventListener("click", (e) => {
+            e.preventDefault()
+            let inputEntrada = document.querySelector("#entrada");
+            let resultadoEncriptado;
+            alert(encritarPalabra(inputEntrada))
+        })
+
+        function encritarPalabra(ingresoFrase) {
+            let frase = ingresoFrase.value;
+            const matrizCambio = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+
+            frase = frase.toLowerCase();
+            for (let i = 0; i < matrizCambio.length; i++) {
+
+                if (frase.includes(matrizCambio[i][0])) {
+                    frase = frase.replaceAll(matrizCambio[i][0], matrizCambio[i][1])
+                    console.log(frase)
+                }
+            }
+            return frase
+        }
+
+    </script>
+</body>
+
+</html>
