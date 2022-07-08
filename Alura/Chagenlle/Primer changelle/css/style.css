@@ -194,6 +194,10 @@ footer {
     #salida-texto {
         height: auto;
     }
+
+    .enlace {
+        display: inline-block;
+    }
 }
 
 /* ======================================================================= */

@@ -1,4 +1,4 @@
-const expresion = /^[a-z/ñ\s]+$/; // Letras
+const expresion = /^[a-z/ñ]+[a-z\s]*$/; // Letras
 let ingresoTexto = document.querySelector("#ingreso-texto");
 let botonEncriptar = document.querySelector(".encriptar");
 let botonDesencriptar = document.querySelector(".desencriptar");
